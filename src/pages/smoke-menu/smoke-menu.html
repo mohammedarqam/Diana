@@ -1,0 +1,16 @@
+<ion-header>
+    <ion-navbar color="primary" >
+      <ion-title>Smoke Menu</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+<ion-content padding>
+    <ion-card *ngFor="let item of smokeItems">
+        <ion-card-content>
+          <ion-card-title>
+              {{item.Name}}
+          </ion-card-title>
+        </ion-card-content>
+      </ion-card>
+
+</ion-content>

@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar color="primary" >
+    <ion-title>Cart</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+<ion-grid>
+<ion-row *ngFor="let item of cartItems" >
+  <ion-card>
+  <ion-card-content>
+    <ion-col>
+      {{item.Name}}
+    </ion-col>
+    <ion-col>
+      {{item.Quantity}}
+    </ion-col>
+    <ion-col>
+      {{item.Price}}
+    </ion-col>
+  </ion-card-content>
+</ion-card>
+</ion-row>
+</ion-grid>
+
+
+</ion-content>
