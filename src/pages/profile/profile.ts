@@ -16,6 +16,8 @@ export class ProfilePage {
   userRef = firebase.database().ref("Users/").child(this.uid);
   public user : Array<any> = [];
 
+  loyal : string;
+
   constructor(
   public navCtrl: NavController,
   public loadingCtrl : LoadingController, 
@@ -35,6 +37,11 @@ export class ProfilePage {
 
     this.userRef.once('value', itemSnapshot => {
       this.user = [];
+      if(itemSnapshot.val().Loyalty){
+        this.loyal = "You are a Loyal Customer"
+      }else{
+        this.loyal = "Loyalty to be Gained"
+      }
         this.user.push(itemSnapshot.val());
         return false;
     }).then(()=>{

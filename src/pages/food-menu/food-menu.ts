@@ -39,19 +39,27 @@ export class FoodMenuPage {
     this.menuItems[i].Quantity--;
   }
 
+
   atCart(){
     let loading = this.loadingCtrl.create({
-      content: 'Adding to Cart..'
+      content: 'Please wait...'
     });
     loading.present();
 
     this.menuItems.forEach(item =>{
       if(item.Quantity>0){
-        this.cartRef.push(item).then(()=>{
-          loading.dismiss();
+        this.cartRef.child(item.key).transaction(function(currentData){
+          if(currentData==null){
+            return {Name : item.Name, Price : item.Price,Quantity : item.Quantity }
+          }else{
+            currentData.Quantity = currentData.Quantity+ item.Quantity ;
+            return {Name : item.Name,Price : item.Price ,Quantity :currentData.Quantity} ;
+          }
         }).then(()=>{
           this.app.getRootNav().getActiveChildNav().select(1);
-        }) ;
+        }).then(()=>{
+          loading.dismiss();
+        })
       }
     });
 

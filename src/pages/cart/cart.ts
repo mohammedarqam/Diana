@@ -46,5 +46,19 @@ export class CartPage {
     }) ;
   }
 
+  rfCart(key){
+    let loading = this.loadingCtrl.create({
+      content: 'Please wait...'
+    });
+    loading.present();
+
+    this.cartRef.child(key).remove().then(()=>{
+      this.getCart();
+    }).then(()=>{
+      loading.dismiss();
+    })
+  }
+
+
 
 }

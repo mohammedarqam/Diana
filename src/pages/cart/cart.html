@@ -19,6 +19,9 @@
     <ion-col>
       {{item.Price}}
     </ion-col>
+    <ion-col>
+      <ion-icon name="trash" (click)="rfCart(item.key)"></ion-icon>
+    </ion-col>
   </ion-card-content>
 </ion-card>
 </ion-row>

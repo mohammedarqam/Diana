@@ -5,12 +5,23 @@
   </ion-header>
   
 <ion-content padding>
-    <ion-card *ngFor="let item of smokeItems">
-        <ion-card-content>
-          <ion-card-title>
-              {{item.Name}}
-          </ion-card-title>
-        </ion-card-content>
-      </ion-card>
+  <ion-content padding>
 
+    <ion-card *ngFor="let item of menuItems; let i = index">
+      <ion-card-content>
+        <ion-item>
+           {{item.Name}}
+          <button ion-button item-end clear icon-only (click)="decrease(i)" >
+            <ion-icon name="remove-circle"></ion-icon>
+          </button>
+          <p item-end>{{item.Quantity}}</p>
+          <button ion-button item-end clear icon-only (click)="increase(i)" >
+            <ion-icon name="add-circle"></ion-icon>
+          </button>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+
+
+<button ion-button color="danger" block (click)="atCart()">Add To Cart</button>
 </ion-content>
