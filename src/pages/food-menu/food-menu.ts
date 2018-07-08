@@ -56,8 +56,6 @@ export class FoodMenuPage {
             return {Name : item.Name,Price : item.Price ,Quantity :currentData.Quantity} ;
           }
         }).then(()=>{
-          this.app.getRootNav().getActiveChildNav().select(1);
-        }).then(()=>{
           loading.dismiss();
         })
       }

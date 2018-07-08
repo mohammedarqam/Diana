@@ -4,22 +4,18 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
 
-<ion-card [navPush]="fmenu" >
-  <ion-card-content>
-    <ion-card-title>
-      Food Menu
-    </ion-card-title>
-  </ion-card-content>
+
+<ion-card class="food" [navPush]="fmenu" >
+    <div class="overlay"></div>
+    <div class="title">Food Menu</div>
 </ion-card>
 
-<ion-card [navPush]="smenu" >
-  <ion-card-content>
-    <ion-card-title>
-      Smoke Menu
-    </ion-card-title>
-  </ion-card-content>
+
+<ion-card class="smoking" [navPush]="smenu" >
+    <div class="overlay"></div>
+    <div class="title">Smoke Menu</div>
 </ion-card>
 
 

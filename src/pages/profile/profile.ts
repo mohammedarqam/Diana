@@ -37,11 +37,7 @@ export class ProfilePage {
 
     this.userRef.once('value', itemSnapshot => {
       this.user = [];
-      if(itemSnapshot.val().Loyalty){
-        this.loyal = "You are a Loyal Customer"
-      }else{
-        this.loyal = "Loyalty to be Gained"
-      }
+        this.loyal = itemSnapshot.val().Loyalty;
         this.user.push(itemSnapshot.val());
         return false;
     }).then(()=>{

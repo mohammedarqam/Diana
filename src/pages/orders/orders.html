@@ -3,6 +3,16 @@
     <ion-title>Your Orders</ion-title>
   </ion-navbar>
 </ion-header>
+
+
 <ion-content padding>
+
+  <ion-card *ngFor="let order of userOrders" (click)="gtDetails(order)" >
+    <ion-card-content>
+      <ion-card-title>
+        {{order}}
+      </ion-card-title>
+    </ion-card-content>
+  </ion-card>
 
 </ion-content>

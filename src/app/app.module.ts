@@ -7,6 +7,7 @@ import { MyApp } from './app.component';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import * as firebase from 'firebase';
+import { LocationTrackerProvider } from '../providers/location-tracker/location-tracker';
 
 firebase.initializeApp({
   apiKey: "AIzaSyA7bn46-7NyCztVM7RPg2OVfkV75udiCqA",
@@ -32,7 +33,8 @@ firebase.initializeApp({
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    LocationTrackerProvider
   ]
 })
 export class AppModule {}

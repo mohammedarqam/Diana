@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar color="primary" >
+    <ion-title>{{Order}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+<ion-card>
+  <ion-card-content>
+    <ion-card-title>
+      Status : {{orderStatus}}
+    </ion-card-title>
+    <ion-item *ngFor="let item of items">
+      <p>Name : {{item.Name}} </p>
+      <p>Price : {{item.Price}} </p>
+      <p>Quantity : {{item.Quantity}} </p>
+      <p>Amount : {{item.Amount}} </p>
+    </ion-item>
+  </ion-card-content>
+</ion-card>
+
+
+  
+</ion-content>

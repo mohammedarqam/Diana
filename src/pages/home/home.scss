@@ -1,3 +1,33 @@
 page-home {
+    ion-card {
+        position: relative;
+        text-align: center;
+        height: 200px;
+      }
+      .food{
+        background-image: url("../../assets/imgs/samosa.jpg") !important ;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .smoking{
+        background-image: url("../../assets/imgs/smoking.jpg") !important ;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .title {
+        position: absolute;
+        top: 50%;
+        font-size: 2.5em;
+        width: 100%;
+        font-weight: bold;
+        color: #fff;
+      }
+      .overlay{
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background-color: rgba($color: #000000, $alpha: 0.7);
+          cursor: pointer;
+      }
 
 }
